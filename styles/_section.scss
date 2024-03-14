@@ -1,0 +1,191 @@
+@import 'colors';
+
+section {
+    &:nth-child(even) {
+        & .section-number {
+            display: flex;
+            flex-direction: row-reverse;
+            margin-right: 170px;
+        }
+    }
+
+    & .section-number {
+        overflow: hidden;
+        margin-left: 11%;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+
+        &__number {
+            // font-size: 600px;
+            font-size: calc(14px + 30vw);
+            font-weight: 700;
+            margin-top: -200px;
+            margin-bottom: -250px;
+        }
+
+        &__text {
+            color: $lightBlue;
+        }
+    }
+
+    & .first-section-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 600px;
+        height: 100%;
+        padding: 20px;
+        background-image: url('../images/first-section-background.jpg');
+        background-size: cover;
+
+        &>div {
+            display: flex;
+            gap: 100px;
+        }
+
+        & h2 {
+            margin-bottom: 24px;
+        }
+
+        &__title {
+            position: relative;
+            max-width: 490px;
+            width: 100%;
+
+
+            & .green-border {
+                position: absolute;
+                width: 275px;
+                height: 345px;
+                border: 5px solid $green;
+                top: -57px;
+                left: -67px;
+                z-index: 1;
+            }
+
+            & p {
+                line-height: 20px;
+                width: 482px;
+            }
+        }
+
+        &__description {
+            max-width: 482px;
+            width: 100%;
+
+            & p {
+                line-height: 24px;
+            }
+        }
+    }
+
+    & .second-section-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: black;
+        padding: 118px 0 154px 0;
+
+        &>h2 {
+            color: $green;
+            margin-bottom: 110px;
+        }
+
+        &__card-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 360px);
+            gap: 28px;
+            max-width: 1200px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        &__card {
+            position: relative;
+            background-color: $grey;
+            padding: 27px 67px 35px 34px;
+            border-radius: 10px;
+            cursor: pointer;
+
+            &>p {
+                line-height: 20px;
+            }
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                background-color: $green;
+                border-radius: 10px;
+                width: 32px;
+                height: 32px;
+                background-repeat: no-repeat;
+                background-position: center;
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+            }
+
+            &::before {
+                background-image: url('../images/edit.svg');
+                top: 0;
+                right: 0;
+            }
+
+            &::after {
+                background-image: url('../images/remove.svg');
+                bottom: 0;
+                right: 0;
+            }
+
+            &:hover {
+                &::before,
+                    &::after {
+                        opacity: 1;
+                    } 
+            }
+        }
+
+        &__add-card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 5px solid $green;
+            border-radius: 10px;
+            padding-bottom: 20px;
+            cursor: pointer;
+
+            &>p {
+                font-size: 200px;
+                line-height: 100px;
+                color: $green;
+            }
+        }
+    }
+
+    & .third-section-content {
+        display: flex;
+        justify-content: center;
+        height: 500px;
+        background-image: url('../images/third-section-background.jpg');
+        background-size: cover;
+
+        &>div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 109px;
+
+            &>img {
+                max-width: 481px;
+                width: 100%;
+            }
+
+            & p, a {
+                    color: $lightBlue;
+                    margin-bottom: 11px;
+            }
+        }
+    }
+}
+
